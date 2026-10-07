@@ -24,3 +24,21 @@ is fictional sample data (studio "Plumb Line Interiors", Pune, FY 2026-27).
 Replace `PROJECTS`, `STUDIO` and `PIPELINE` in `engine.js` with the client's
 figures: project quotes by trade, costs booked to date, billing milestones,
 payment history and monthly overheads.
+
+## Views
+
+- **Studio owner**: plain words, "three things to do this month", tap any `?` for an explanation.
+- **CA / accountant**: adds sheet A-04 Working papers (revenue recognition schedule,
+  debtors ageing, GST working, TDS by client, advance tax) with "Copy for Excel" buttons,
+  and a CA note under every `?`. Open with `#ca` at the end of the link to start in this view.
+
+## Hosting on your own web address
+
+`python3 interior-studio/build_site.py` writes a ready-to-upload folder to
+`interior-studio/site/` (index.html, engine.js, robots.txt). Upload that folder to any
+static host, for example Cloudflare Pages ("Upload assets") or Netlify Drop, then
+connect a sub-domain such as `ledger.yourfirm.in`.
+
+Before putting a real client's numbers on it, put the site behind a login
+(Cloudflare Access is free for small teams). A public link with real data would
+expose confidential client information.
